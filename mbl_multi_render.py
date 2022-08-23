@@ -60,7 +60,6 @@ def deselectUnselectedObjects():
   selected_objects = bpy.context.selected_objects
   hideAllEditableObjects(selected_objects)
 
-
 def renderObject():
   print('Rendering image')
   bpy.ops.render.render(animation=False, write_still=True, use_viewport=True, layer="gold", scene="")
@@ -76,6 +75,7 @@ def hideAllEditableObjects(objects):
 
 def unhideAndRender(objects, object_names, base_path):
   for index, o in enumerate(objects):
+    print("Rendering ", str(index + 1), "of ", str(len(objects)))
     setOutput(index, object_names, base_path)
     o.hide_viewport = False
     o.hide_render = False
