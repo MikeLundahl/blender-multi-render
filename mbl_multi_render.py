@@ -52,7 +52,7 @@ def unregister():
 
 
 def selectObjects(the_object_name):
-  bpy.ops.object.select_pattern(pattern=the_object_name + "*", case_sensitive=True, extend=False)
+  bpy.ops.object.select_pattern(pattern="*" + the_object_name + "*", case_sensitive=True, extend=False)
   return bpy.context.selected_objects
 
 def deselectUnselectedObjects():
